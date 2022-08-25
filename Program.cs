@@ -1,25 +1,25 @@
-﻿/*** exercise 01***/
-namespace assignment
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using System;
+public class SwapExample
 {
-    internal class Assignment
+    public static void Swap(ref int a, ref int b)
     {
-        public static void Main()
-        {
-            int num1;
-            int num2;
-            int num3;
+        a = a * b;
+        b = a / b;
+        a = a / b;
+    }
 
-            Console.Write("enter the 1st number ");
-            num1 = Convert.ToInt32(Console.ReadLine());
+    public static void Main1(string[] args)
+    {
+        int a = 5, b = 10;
+        Console.WriteLine($"Before swap a= {a} b= {b}");
+        Swap(ref a, ref b);
 
-            Console.Write("enter the 2nd number");
-            num2 = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("enter the 3rd number");
-            num3 = Convert.ToInt32(Console.ReadLine());
-
-            int result = num1 * num2 * num3;
-            Console.WriteLine($"the answer is {result}");
-        }
+        Console.WriteLine($"Before swap a= {a} b= {b}");
     }
 }
